@@ -21,18 +21,41 @@ void randomNumbers(int* vector, int size, int a, int b) {
 }
 
 void bubble_sort(int* vector, int size) {
-
 	for (int i = 0; i < size; i++) {
+		bool flag = true;
+		for (int j = 0; j < size - 1 - i; j++) {
 
-		for (int j = 0; j < size - 1; j++) {
+			if (vector[j] > vector[j + 1]) {
 
-			if (vector[j] < vector[j + 1]) {
-
-				int t = vector[j + 1];
-				vector[j + 1] = vector[j];
-				vector[j] = t;
+				int t = vector[j];
+				vector[j] = vector[j + 1];
+				vector[j + 1] = t;
+				flag = false;
 			}
 		}
+		if (flag) {
+			break;
+		}
 	}
+	
 }
+
+void selected_sort(int* vector, int size) {
+
+	for (int j = 0; j < size; j++)
+	{
+		int index = j;
+		for (int i = j + 1; i < size; i++) {
+			if (vector[i] < vector[index]) {
+				index = i;
+			}
+
+		}
+		int t = vector[j];
+		vector[j] = vector[index];
+		vector[index] = t;
+	}
+
+}
+
 
