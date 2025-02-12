@@ -26,7 +26,7 @@ void bubble_sort(int* vector, int size) {
 
 		for (int j = 0; j < size - 1; j++) {
 
-			if (vector[i] < vector[i + 1]) {
+			if (vector[j] < vector[j + 1]) {
 
 				int t = vector[j + 1];
 				vector[j + 1] = vector[j];
